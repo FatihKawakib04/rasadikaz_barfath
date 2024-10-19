@@ -1,83 +1,93 @@
-/* General Styling */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa;
-    color: #333;
-    margin: 0;
-    padding: 0;
+/* Global font */
+body, h1, h2, h3, p, ul, li, a {
+    font-family: 'Poppins', sans-serif; /* Set Poppins sebagai default font */
 }
 
-/* Header Styling */
-.header-bg {
-    background: linear-gradient(to right, #ff6347, #ff4500);
+/* Header Section Styling */
+.header-section {
+    background: url('../images/yuta.png') no-repeat center center/cover;
+    height: 400px; /* Atur tinggi sesuai kebutuhan */
+    position: relative;
     color: white;
-    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2; /* Memastikan konten berada di atas overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .header-title {
-    font-size: 42px;
+    font-size: 3rem;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
-/* Section Styling */
+.header-subtitle {
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+/* About Us Section */
 .section-title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #333;
+    font-size: 2.5rem;
+    color: #000000; /* Warna utama untuk kontras */
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .section-description {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 40px;
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 40px;
     line-height: 1.8;
 }
 
+/* About Us Section */
 .section-bg-light {
-    background-color: #f4f4f4;
-}
-
-/* List Styling */
-ul.list-group {
-    list-style: none;
-    padding: 0;
+    background-color: #f1f1f1;
 }
 
 .mission-item {
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    padding: 20px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    font-size: 1.1rem;
+    background: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 5px solid #e50914; /* Garis merah di sebelah kiri */
 }
 
-/* Footer Styling */
+/* Footer */
 .footer-bg {
-    background-color: #212529;
+    background-color: #333;
     color: #fff;
-    padding: 30px 0;
-    text-align: center;
-    font-size: 14px;
+    padding: 20px;
 }
 
 .footer-contact {
-    margin: 0;
-    line-height: 1.5;
-    font-size: 16px;
-    color: #fff;
+    margin: 5px 0;
 }
 
-footer p {
-    margin: 0;
-    line-height: 1.5;
+/* Utility Classes */
+.text-center {
+    text-align: center;
 }
 
-footer a {
-    color: #ff4500;
-    text-decoration: none;
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.my-5 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
