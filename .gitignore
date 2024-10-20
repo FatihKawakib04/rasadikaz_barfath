@@ -20,3 +20,5 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+.ngrok.exe.old
+.ngrok.exe.old
