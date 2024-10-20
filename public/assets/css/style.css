@@ -5,7 +5,7 @@ body, h1, h2, h3, p, ul, li, a {
 
 /* Header Section Styling */
 .header-section {
-    background: url('../images/yuta.png') no-repeat center center/cover;
+    background: url('../img/hero-background.png') no-repeat center center/cover;
     height: 400px; /* Atur tinggi sesuai kebutuhan */
     position: relative;
     color: white;
