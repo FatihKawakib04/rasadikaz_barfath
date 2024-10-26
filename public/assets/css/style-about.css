@@ -1,0 +1,302 @@
+:root {
+    --primary-color: #E31E24;
+    --dark-color: #1E1E1E;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Custom styles that Bootstrap doesn't cover */
+.navbar {
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--dark-color);
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem !important;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.hero {
+    background: url('../img/hero-background.png') center/cover;
+    min-height: 60vh;
+}
+
+.hero::before {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mission-number {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.about-image {
+    margin-top: -150px;
+}
+
+.mission-item {
+    margin-left:70px;
+}
+
+.legalitas-section {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    
+}
+
+.legalitas-slide {
+    position: relative;
+    height: 400px;
+    background: url('../img/tentang-kami-6.png') center/cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.legalitas-slide::after {
+    content: ''; /* Required for ::after pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background-color: rgba(204, 20, 20, 0.5); /* Semi-transparent overlay */
+    z-index: 1; /* Ensure it's above the background but behind the content */
+}
+
+.legalitas-slide * {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.legalitas-slide h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.legalitas-slide p {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slide-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.slide-button {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slide-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.slide-number {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.invitation-section {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.red-link {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.invitation-title {
+    font-size: 32px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.invitation-description {
+    color: #cccccc;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.img-content img {
+    width: 100%;
+    margin-left:0px;
+}
+
+.text-content {
+    flex: 0 0 40%;
+    margin: 50px 0;
+}
+
+.red-line {
+    width: 3px;
+    height: 320px; 
+    background-color: red;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.contact-button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: #00D34D;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-left: 0;  /* Pushes the button to the right */
+    margin-right: 0;    /* Ensures it's aligned to the right */
+    width: fit-content;
+    margin-top: 30px;
+}
+
+footer {
+    background-color: #CC1414;
+    color: white;
+    padding: 40px 0 20px 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 60px;
+    position: relative;
+}
+
+.footer-container::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.company-description {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.2s;
+}
+
+.social-links img:hover {
+    opacity: 0.8;
+}
+
+.contact-info {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quick-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+
+.quick-links a:hover {
+    opacity: 0.8;
+}
+
+.copyright {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    font-size: 14px;
+    opacity: 0.9;
+    color:black;
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        margin-top: 0;
+    }
+}

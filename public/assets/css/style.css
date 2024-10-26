@@ -1,93 +1,455 @@
-/* Global font */
-body, h1, h2, h3, p, ul, li, a {
-    font-family: 'Poppins', sans-serif; /* Set Poppins sebagai default font */
+:root {
+    --primary-color: #E31E24;
+    --dark-color: #1E1E1E;
 }
 
-/* Header Section Styling */
-.header-section {
-    background: url('../img/hero-background.png') no-repeat center center/cover;
-    height: 400px; /* Atur tinggi sesuai kebutuhan */
-    position: relative;
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-color);
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
 }
 
-.header-content {
+/* Custom styles that Bootstrap doesn't cover */
+.navbar {
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: var(--dark-color);
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem !important;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.hero-section {
+    background: url('../img/hero-background.png') center/cover;
+    min-height: 80vh;
+    color: white;
     position: relative;
-    z-index: 2; /* Memastikan konten berada di atas overlay */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
-.header-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+.hero-content {
+    max-width: 600px;
+    padding: 2rem;
 }
 
-.header-subtitle {
-    font-size: 1.5rem;
-    color: #ddd;
-}
-
-/* About Us Section */
-.section-title {
-    font-size: 2.5rem;
-    color: #000000; /* Warna utama untuk kontras */
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.section-description {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    line-height: 1.8;
-}
-
-/* About Us Section */
-.section-bg-light {
-    background-color: #f1f1f1;
-}
-
-.mission-item {
-    list-style: none;
-    font-size: 1.1rem;
-    background: #fff;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border-left: 5px solid #e50914; /* Garis merah di sebelah kiri */
-}
-
-/* Footer */
-.footer-bg {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-
-.footer-contact {
-    margin: 5px 0;
-}
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.mb-4 {
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
 }
 
-.my-5 {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+.hero-title .red-text {
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-contact {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.truck-container {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+}
+
+.truck-image {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-contact {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #ff1f26;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+@-webkit-keyframes scroll {
+0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+100% {
+    -webkit-transform: translateX(calc(-250px * 7)); /* Adjust width here based on number of images */
+}
+}
+
+@keyframes scroll {
+0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+100% {
+    -webkit-transform: translateX(calc(-250px * 7)); /* Adjust width here based on number of images */
+}
+}
+
+.slider {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.slider::before,
+.slider::after {
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    z-index: 2;
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 1); /* Double the number of slides to create infinite loop effect */
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+}
+
+.slide {
+    max-width: 150px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 100px; /* Adjust this value to increase/decrease spacing */
+}
+
+.tentang-kami {
+    font-size: 1rem;
+    color: #FF0000; /* Red color for the text */
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.text-why-barfath {
+    text-align: justify;
+}
+
+.service-section {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.service-section {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.red-link {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.service-title {
+    font-size: 32px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.service-description {
+    color: #cccccc;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.content-wrapper {
+    padding: 150px 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.img-content img {
+    width: 120%;
+    margin-left:-100px;
+}
+
+.text-content {
+    flex: 0 0 40%;
+}
+
+.red-line {
+    width: 3px;
+    height: 320px; 
+    background-color: red;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.map-container {
+    position: relative;
+    height: 500px;
+    margin: 40px 0;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.location-marker {
+    background: #ff3333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* Custom controls and popup styles */
+.leaflet-container {
+    font-family: Arial, sans-serif;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+    background: white;
+    color: #333;
+    border-radius: 4px;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.custom-popup .leaflet-popup-content {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.custom-popup .leaflet-popup-tip {
+    background: white;
+}
+
+.custom-popup .leaflet-popup-close-button {
+    color: #666;
+    font-size: 16px;
+    padding: 4px;
+    right: 4px;
+    top: 4px;
+}
+
+.custom-map-controls {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.zoom-control:hover {
+    background-color: #f4f4f4;
+}
+
+.truck-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    color: white;
+    background: #1ea952;
+}
+
+footer {
+    background-color: #CC1414;
+    color: white;
+    padding: 40px 0 20px 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 60px;
+    position: relative;
+}
+
+.footer-container::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.company-description {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.2s;
+}
+
+.social-links img:hover {
+    opacity: 0.8;
+}
+
+.contact-info {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quick-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+
+.quick-links a:hover {
+    opacity: 0.8;
+}
+
+.copyright {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    font-size: 14px;
+    opacity: 0.9;
+    color:black;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 200px;
+        min-height: 60vh;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
 }
