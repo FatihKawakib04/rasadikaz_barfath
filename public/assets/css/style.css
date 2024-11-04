@@ -122,78 +122,86 @@
     margin: 0 auto;
 }
 
-@-webkit-keyframes scroll {
-0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-100% {
-    -webkit-transform: translateX(calc(-250px * 7)); /* Adjust width here based on number of images */
-}
-}
-
-@keyframes scroll {
-0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-100% {
-    -webkit-transform: translateX(calc(-250px * 7)); /* Adjust width here based on number of images */
-}
-}
-
-.slider {
-    height: 100px;
+.logo-slider-container {
     width: 100%;
     overflow: hidden;
     position: relative;
-    margin: auto;
+    padding: 20px 0;
 }
 
-.slider::before,
-.slider::after {
-    content: "";
-    position: absolute;
-    height: 100px;
-    width: 200px;
-    z-index: 2;
-    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.slider::after {
-    right: 0;
-    top: 0;
-    -webkit-transform: rotateZ(180deg);
-    transform: rotateZ(180deg);
-}
-
-.slider::before {
-    left: 0;
-    top: 0;
-}
-
-.slide-track {
+.logo-slider-wrapper {
     display: flex;
-    width: calc(250px * 1); /* Double the number of slides to create infinite loop effect */
-    -webkit-animation: scroll 40s linear infinite;
-    animation: scroll 40s linear infinite;
+    transition: transform 0.5s ease;
+    animation: scroll 30s linear infinite;
 }
 
-.slide {
-    max-width: 150px;
-    height: auto;
+.logo-slide {
+    min-width: 200px;
+    padding: 0 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 100px; /* Adjust this value to increase/decrease spacing */
+}
+
+.logo-slide img {
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo-slide {
+        min-width: 150px;
+        padding: 0 20px;
+    }
+    
+    .logo-slide img {
+        max-width: 120px;
+    }
+}
+
+/* Optional gradient overlay for smooth edges */
+.logo-slider-container::before,
+.logo-slider-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.logo-slider-container::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.logo-slider-container::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
 }
 
 .tentang-kami {
     font-size: 1rem;
-    color: #FF0000; /* Red color for the text */
     display: flex;
     align-items: center;
     font-weight: bold;
+}
+
+.tentang-kami a{
+    text-decoration: none;
+    color: #FF0000; /* Red color for the text */
 }
 
 .text-why-barfath {
@@ -347,30 +355,18 @@
 }
 
 footer {
-    background-color: #CC1414;
+    background-image: url('../img/footer-bg.png');
+    background-size: cover;
+    background-position: center;
     color: white;
     padding: 40px 0 20px 0;
     width: 100%;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
-    gap: 60px;
-    position: relative;
-}
-
-.footer-container::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 20px;
-    right: 20px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
+@media (min-width: 992px) {
+    .footer-section {
+        margin-bottom: 0;
+    }
 }
 
 .footer-section h2 {
@@ -381,10 +377,12 @@ footer {
 }
 
 .company-description {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.6;
     opacity: 0.9;
     margin-bottom: 20px;
+    text-align: justify;
+    width: 85%;
 }
 
 .social-links {
@@ -433,15 +431,28 @@ footer {
 .copyright {
     background-color: #ffffff;
     text-align: center;
-    padding: 10px 0 10px 0;
     font-size: 14px;
     opacity: 0.9;
-    color:black;
+    padding: 10px 0px;
+    color: black;
+}
+
+@media (max-width: 991px) {
+    .footer-container {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
+    .footer-section {
+        margin-bottom: 40px;
+    }
     .hero-section {
-        padding-top: 200px;
+        padding-top: 40px;
         min-height: 60vh;
     }
     

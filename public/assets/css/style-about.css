@@ -55,6 +55,12 @@ body {
     margin-left:70px;
 }
 
+.container-img-structure-company{
+    margin-left: -150px;
+    z-index: 1; 
+    position: relative;
+}
+
 .legalitas-section {
     position: relative;
     overflow: hidden;
@@ -213,20 +219,17 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
-    gap: 60px;
-    position: relative;
 }
 
-.footer-container::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 20px;
-    right: 20px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
+.footer-section {
+    margin: 0 30px;
+    padding: 0 15px;
+}
+
+@media (min-width: 992px) {
+    .footer-section {
+        margin-bottom: 0;
+    }
 }
 
 .footer-section h2 {
@@ -289,14 +292,37 @@ footer {
 .copyright {
     background-color: #ffffff;
     text-align: center;
-    padding: 10px 0 10px 0;
     font-size: 14px;
     opacity: 0.9;
-    color:black;
+    padding: 10px 0px;
+    color: black;
+}
+
+@media (max-width: 991px) {
+    .footer-container {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
+    .footer-section {
+        margin-bottom: 40px;
+    }
     .about-image {
         margin-top: 0;
+    }
+    .container-img-structure-company{
+        margin-left: 0px;
+    }
+    .mission-item {
+        margin-left:0px;
+    }
+    .structure-company-img {
+        max-width: 100%; /* Ensure the image doesn't exceed 100% on smaller screens */
+        margin-left: 0; /* Adjust margin for mobile if necessary */
     }
 }
