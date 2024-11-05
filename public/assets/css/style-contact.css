@@ -24,6 +24,14 @@ body {
     padding: 0.5rem 1.5rem !important;
 }
 
+.navbar-toggler { 
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon { 
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 .nav-link.active {
     color: var(--primary-color) !important;
 }
@@ -59,7 +67,7 @@ body {
     top: 40px;
     left: 40px;
     z-index: 999;
-    width: 380px;
+    width: 30%;
 }
 
 .contact-info-box h4 {
@@ -252,6 +260,16 @@ footer {
     opacity: 0.8;
 }
 
+.border-botton-white-info, .border-botton-white-contact{
+    width:90%;
+    border-bottom: 1px solid white;;
+}
+
+.border-botton-white-links{
+    width:30%;
+    border-bottom: 1px solid white;
+}
+
 .copyright {
     background-color: #ffffff;
     text-align: center;
@@ -272,9 +290,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .contact-info-box {
+        width: 100%;
+    }
+
+    .company-description {
+        text-align: center;
+        width: 100%;
+    }
+
+    .border-botton-white-links, 
+    .border-botton-white-contact, 
+    .border-botton-white-info{
+        width:100%;
+        border-bottom: 1px solid white;
+    }
+
     .footer-section {
         margin-bottom: 40px;
     }
+
 
     .hero-section {
         padding-top: 200px;
