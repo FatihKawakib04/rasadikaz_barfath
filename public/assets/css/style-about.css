@@ -209,21 +209,12 @@ body {
 }
 
 footer {
-    background-color: #CC1414;
+    background-image: url('../img/footer-bg.png');
+    background-size: cover;
+    background-position: center;
     color: white;
     padding: 40px 0 20px 0;
     width: 100%;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-section {
-    margin: 0 30px;
-    padding: 0 15px;
 }
 
 @media (min-width: 992px) {
@@ -240,10 +231,12 @@ footer {
 }
 
 .company-description {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.6;
     opacity: 0.9;
     margin-bottom: 20px;
+    text-align: justify;
+    width: 85%;
 }
 
 .social-links {
