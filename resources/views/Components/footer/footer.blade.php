@@ -12,7 +12,7 @@
         
             <!-- Contact Info Section -->
             <div class="col-lg-3 lg-ps-5 footer-section">
-                <p class ="fw-bold" style="width:90%;border-bottom: 1px solid white;">Kantor Pusat</h2>
+                <p class ="fw-bold border-botton-white-info" style="">Kantor Pusat</h2>
                 <div class="contact-info">
                     <p>JL. RAYA TAJUR RT.004/002 NO. 37<br>
                     BOGOR TIMUR, KOTA BOGOR</p>
@@ -31,7 +31,7 @@
             </div>
     
             <div class="col-lg-3 footer-section">
-                    <p class ="fw-bold" style="width:90%;border-bottom: 1px solid white;">Tetap berhubungan dengan kami</p>
+                    <p class ="fw-bold border-botton-white-contact" style="">Tetap berhubungan dengan kami</p>
                 <div class="">
                     <p>0856 7467 772 ( M. YOSEP )</p>
                     <p>0819 9891 4413 ( SEVIRA M. )</p>
@@ -41,7 +41,7 @@
     
             <!-- Quick Links Section -->
             <div class="col-lg-3 footer-section">
-                <p class ="fw-bold border-botton-white" style="width:30%;border-bottom: 1px solid white;">Quick link</p>
+                <p class ="fw-bold border-botton-white-links" style="">Quick link</p>
                 <div class="quick-links">
                     <a href="#">Beranda</a>
                     <a href="#">Tentang Kami</a>
